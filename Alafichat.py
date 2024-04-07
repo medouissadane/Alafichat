@@ -27,36 +27,36 @@ scissors_ascii=("""
   ---.__(___)
   """)
 
-print("Welcome to the Rock, Paper, Scissors game: \n")
-help = input("Prees Enter continue or type (Help) for the rules ").lower()
+print("Marhba bik f alafichat: \n")
+help = input("Warak Enter labghiti tal3ab ila makntich 3arf m9awa3id ktab Help: ").lower()
 if help == "help":
     print(
         """\n
-        **************** RULES ****************
-        1) You choose and the computer chooses
-        2) Rock smashes Scissors --> Rock wins
-        3) Scissors cut Paper --> Scissors wins
-        4) Paper covers Rock --> Paper wins
+        **************** L9awa3id ****************
+        1) Nta atkhtar o pc ghaykhtar
+        2) Hajra m3a M9ass --> Hajra katrba7
+        3) M9ass kay9ata3 War9a --> M9ass kyrba7
+        4) War9a katghati Hajra --> War9a ktrba7
 
     """
     )
 
-game_list = ["Rock", "Paper", "Scissors"]
-your_choice = input("Enter your_choice (Rock, Paper, Scissors):").capitalize()
+game_list = ["hajra", "war9a", "m9ass"]
 
 # your_choice*********************
-if your_choice not in game_list:
-    print("Invalid choice. Please run y=the program  again and choose Rock, Paper, or Scissors")
-else:
-    
-    print("\n You chose:")
-    if your_choice=="Rock":
-        print(rock_ascii)
+your_choice = input("L3ab (hajra, war9a, m9ass): ")
 
-    elif your_choice=="Paper":
+if your_choice not in game_list:
+    print("Khtar Hajra, War9a ola M9as")
+
+else:
+    print("\n Nta:")
+    if your_choice=="hajra":
+        print(rock_ascii)
+    elif your_choice=="war9a":
         print(paper_ascii)
 
-    elif your_choice=="Scissors":
+    elif your_choice=="m9ass":
         print(scissors_ascii)
 
     else:
@@ -65,21 +65,21 @@ else:
 
     # computer_choice*****************
     computer_choice = random.choice(game_list)
-    print("\n Computer chose:")
+    print("\n Pc:")
 
-    if computer_choice=="Rock":    
+    if computer_choice=="hajra":    
         print(rock_ascii)
 
-    elif computer_choice=="Paper":
+    elif computer_choice=="war9a":
         print(paper_ascii)
 
-    elif computer_choice=="Scissors":
+    elif computer_choice=="m9ass":
         print(scissors_ascii)
 
     #    win or lose*******************
-    if your_choice=="Rock" and computer_choice=="Scissors" or your_choice=="Paper" and computer_choice=="Rock" or your_choice=="Scissors" and computer_choice=="Paper":
-        print(f"You win! {your_choice} beats {computer_choice}")
+    if your_choice=="hajra" and computer_choice=="m9ass" or your_choice=="war9a" and computer_choice=="hajra" or your_choice=="m9ass" and computer_choice=="war9a":
+        print(f"Rbahti! {your_choice} katghlab {computer_choice}")
     elif your_choice==computer_choice:
-        print("It's a tie!")
+        print("Ta3adol!")
     else:
-        print(f"You lose! {computer_choice} beats {your_choice}")
+        print(f"Khsarti! {computer_choice} katghlab {your_choice}")
